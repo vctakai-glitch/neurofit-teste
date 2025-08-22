@@ -18,7 +18,8 @@
       <a href="index.html" class="logo" aria-label="NeuroFit - Início">
         <img src="images/logo.png" alt="NeuroFit">
       </a>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+      <nav class="site-nav" id="site-nav" role="navigation" aria-label="Menu principal">
         <ul>
           <li><a href="index.html" aria-current="page">Início</a></li>
           <li><a href="como-funciona.html">Como Funciona</a></li>
@@ -76,6 +77,20 @@
   <script>
     // Simple script to update year
     document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const nav = document.getElementById('site-nav');
+      nav.classList.toggle('mobile-open');
+    }
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('site-nav');
+        nav.classList.remove('mobile-open');
+      });
+    });
   </script>
 </body>
 </html>
