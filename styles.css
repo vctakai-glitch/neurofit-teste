@@ -285,13 +285,29 @@ label input[type="radio"] {
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
+  margin-left: auto;
 }
 
 /* Enhanced Mobile Styles */
 @media (max-width: 768px) {
-  /* Mobile menu button */
+  /* Mobile header layout */
+  .header-inner {
+    position: relative;
+  }
+  
+  /* Mobile menu button - absolute positioning to top-right */
   .mobile-menu-btn {
     display: block;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  
+  /* Hide desktop navigation */
+  .site-nav {
+    width: 100%;
   }
   
   /* Center all hero elements */
