@@ -210,7 +210,8 @@
       <a href="index.html" class="logo" aria-label="NeuroFit - Início">
         <img src="images/logo.png" alt="NeuroFit">
       </a>
-      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+      <nav class="site-nav" id="site-nav" role="navigation" aria-label="Menu principal">
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="como-funciona.html">Como Funciona</a></li>
@@ -466,6 +467,19 @@
     function playVideo() {
       alert('🎥 Vídeo carregando... (Funcionalidade em desenvolvimento)');
     }
+    
+    // Mobile menu function
+    function toggleMobileMenu() {
+      const nav = document.getElementById('site-nav');
+      nav.classList.toggle('mobile-open');
+    }
+    
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('site-nav');
+        nav.classList.remove('mobile-open');
+      });
+    });
     
     // Initialize page
     generateDaysNav();
