@@ -179,6 +179,85 @@ img { max-width: 100%; height: auto; }
   color: #ffd700;
   flex-shrink: 0;
 }
+
+/* About page styles */
+.priority-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.priority-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 0.5rem;
+}
+
+.priority-icon {
+  font-size: 1.5rem;
+}
+
+.how-it-works {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 0.75rem;
+}
+
+.step-number {
+  background: var(--brand);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--brand-contrast);
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.team-member {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 1rem;
+}
+
+.team-member h4 {
+  margin: 1rem 0 0.5rem 0;
+  color: var(--brand-contrast);
+  font-size: 1.2rem;
+}
+
+.team-member p {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
 .badge { display: inline-block; font-size: .75rem; background: var(--surface); color: var(--brand-contrast); padding: .25rem .5rem; border-radius: .5rem; }
 .table { width: 100%; border-collapse: collapse; }
 .table th,.table td { border: 1px solid #e5e7eb; padding: .75rem; text-align: left; }
@@ -322,8 +401,8 @@ label input[type="radio"] {
   }
   
   .hero-logo {
-    max-width: 200px !important;
-    margin: 0 auto 0.5rem auto !important;
+    max-width: 350px;
+    margin: 0 auto 5px auto !important;
     display: block;
   }
   
