@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Painel - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .painel-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1rem;
+      min-height: calc(100vh - 200px);
+    }
+    
+    .sidebar {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: .75rem;
+      padding: 1rem;
+      position: sticky;
+      top: 5rem;
+      max-height: calc(100vh - 6rem);
+      overflow-y: auto;
+    }
+    
+    .progress-header {
+      background: var(--surface);
+      padding: 1rem;
+      border-radius: .75rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .progress-bar {
+      background: #eef2ff;
+      height: 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: .5rem 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--brand), #4a7be0);
+      width: 13%;
+      transition: width .3s ease;
+    }
+    
+    .days-nav {
+      display: grid;
+      gap: .5rem;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .day-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem;
+      background: transparent;
+      border: 1px solid #e5e7eb;
+      border-radius: .5rem;
+      cursor: pointer;
+      text-align: left;
+      transition: all .2s;
+    }
+    
+    .day-button:hover {
+      background: var(--surface);
+    }
+    
+    .day-button.active {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+    }
+    
+    .day-button.completed {
+      background: #f0fdf4;
+      border-color: var(--success);
+      color: var(--success);
+    }
+    
+    .day-status {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .main-content {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: .75rem;
+      padding: 2rem;
+    }
+    
+    .day-header {
+      margin-bottom: 2rem;
+    }
+    
+    .day-title {
+      font-size: 1.75rem;
+      margin-bottom: .5rem;
+    }
+    
+    .day-objective {
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: .5rem;
+      border-left: 4px solid var(--brand);
+    }
+    
+    .content-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #fafbfc;
+      border-radius: .75rem;
+    }
+    
+    .video-placeholder {
+      background: #f0f0f0;
+      padding: 3rem;
+      text-align: center;
+      border-radius: .75rem;
+      margin: 1rem 0;
+      border: 2px dashed #ccc;
+    }
+    
+    .checklist {
+      display: grid;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: .5rem;
+    }
+    
+    .checklist-item input[type="checkbox"] {
+      margin-top: .25rem;
+      transform: scale(1.2);
+    }
+    
+    .checklist-item.completed {
+      background: #f0fdf4;
+      border-color: var(--success);
+    }
+    
+    .points-display {
+      background: linear-gradient(135deg, #ffd700, #ffed4a);
+      color: #92400e;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    
+    .premium-upsell {
+      background: linear-gradient(135deg, #5b8def, #4a7be0);
+      color: white;
+      padding: 1.5rem;
+      border-radius: .75rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .locked-areas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .locked-area {
+      padding: 1rem;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: .5rem;
+      opacity: 0.6;
+      text-align: center;
+    }
+    
+    @media (max-width: 900px) {
+      .painel-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        position: static;
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <div class="container">
+      <div class="progress-header">
+        <h2>Programa de 30 Dias - Fitness e Condicionamento</h2>
+        <p><strong>Dia 4 de 30 concluído – 13% completo</strong></p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="points-display" id="points-display">
+          🏆 120 pontos conquistados
+        </div>
+      </div>
+      
+      <div class="painel-container">
+        <aside class="sidebar">
+          <h3>Rotina de 30 Dias</h3>
+          <div class="days-nav" id="days-nav">
+            <!-- Days will be generated by JavaScript -->
+          </div>
+          
+          <div style="margin-top: 2rem; padding: 1rem; background: #fff3cd; border-radius: .5rem; text-align: center;">
+            <p><strong>🔒 Você desbloqueou apenas 15% do potencial NeuroFit.</strong></p>
+            <p><small>Liberte todas as áreas no plano Premium.</small></p>
+            <a href="premium.html" class="btn" style="margin-top: .5rem;">Conheça o Premium</a>
+          </div>
+        </aside>
+        
+        <div class="main-content">
+          <div class="day-header">
+            <h1 class="day-title" id="day-title">Dia 4: Construindo Resistência</h1>
+            <div class="day-objective">
+              <h3>🎯 Objetivo do Dia</h3>
+              <p id="day-objective">Aumentar gradualmente sua resistência cardiovascular com exercícios de baixo impacto.</p>
+            </div>
+          </div>
+          
+          <div class="content-section">
+            <h3>🎥 Vídeo do Dia (10 min)</h3>
+            <div class="video-placeholder">
+              <h4>🎬 "Exercícios de Resistência para Iniciantes"</h4>
+              <p>Aprenda técnicas seguras para melhorar seu condicionamento</p>
+              <button class="btn secondary" onclick="playVideo()">▶️ Assistir Vídeo</button>
+            </div>
+          </div>
+          
+          <div class="content-section">
+            <h3>🏃 Exercício Prático (15 min)</h3>
+            <p><strong>Caminhada Intervalada:</strong></p>
+            <ul>
+              <li>5 min de aquecimento (caminhada leve)</li>
+              <li>5 min de caminhada rápida</li>
+              <li>5 min de caminhada leve para recuperação</li>
+            </ul>
+          </div>
+          
+          <div class="content-section">
+            <h3>📝 Ação Prática do Dia</h3>
+            <p>Escreva 3 coisas pelas quais você é grato hoje e anote como se sentiu durante o exercício.</p>
+            <textarea placeholder="Digite suas reflexões aqui..." rows="3" style="width: 100%; margin-top: .5rem; padding: .75rem; border: 1px solid #e5e7eb; border-radius: .5rem;"></textarea>
+          </div>
+          
+          <div class="content-section">
+            <h3>✅ Checklist do Dia</h3>
+            <div class="checklist" id="checklist">
+              <div class="checklist-item">
+                <input type="checkbox" id="task1" onchange="updateProgress()">
+                <div>
+                  <label for="task1"><strong>Assistir vídeo completo</strong></label>
+                  <p style="margin: .25rem 0; color: var(--muted);">10 pontos</p>
+                </div>
+              </div>
+              
+              <div class="checklist-item">
+                <input type="checkbox" id="task2" onchange="updateProgress()">
+                <div>
+                  <label for="task2"><strong>Completar exercício prático</strong></label>
+                  <p style="margin: .25rem 0; color: var(--muted);">20 pontos</p>
+                </div>
+              </div>
+              
+              <div class="checklist-item">
+                <input type="checkbox" id="task3" onchange="updateProgress()">
+                <div>
+                  <label for="task3"><strong>Escrever 3 gratidões</strong></label>
+                  <p style="margin: .25rem 0; color: var(--muted);">10 pontos</p>
+                </div>
+              </div>
+              
+              <div class="checklist-item">
+                <input type="checkbox" id="task4" onchange="updateProgress()">
+                <div>
+                  <label for="task4"><strong>Registrar reflexões do exercício</strong></label>
+                  <p style="margin: .25rem 0; color: var(--muted);">10 pontos</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn btn-primary" onclick="completeDay()" style="width: 100%; margin-top: 1rem;">
+              🎉 Finalizar Dia 4
+            </button>
+          </div>
+          
+          <div class="premium-upsell">
+            <h3>💎 Mensagem Semanal</h3>
+            <p><strong>Parabéns! Você está avançando no seu caminho.</strong></p>
+            <p>Já pensou como seria unir esse progresso às outras áreas da sua vida? Conheça o Premium.</p>
+            <a href="premium.html" class="btn" style="background: white; color: var(--brand); margin-top: 1rem;">Conheça o Premium</a>
+          </div>
+          
+          <div class="content-section">
+            <h3>🔒 Outras Áreas (Premium)</h3>
+            <div class="locked-areas">
+              <div class="locked-area">
+                <h4>🥗 Nutrição</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>🧘 Mindfulness</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>⚡ Produtividade</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>💝 Relacionamentos</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>💰 Finanças</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>🎨 Criatividade</h4>
+                <p>Bloqueada</p>
+              </div>
+              <div class="locked-area">
+                <h4>🌟 Desenvolvimento</h4>
+                <p>Bloqueada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    
+    // Generate days navigation
+    function generateDaysNav() {
+      const daysNav = document.getElementById('days-nav');
+      for (let i = 1; i <= 30; i++) {
+        const dayButton = document.createElement('button');
+        dayButton.className = 'day-button';
+        if (i <= 3) dayButton.className += ' completed';
+        if (i === 4) dayButton.className += ' active';
+        
+        let status = '';
+        if (i <= 3) status = '✓';
+        else if (i === 4) status = '●';
+        else status = '';
+        
+        dayButton.innerHTML = `
+          <span>Dia ${i}</span>
+          <span class="day-status">${status}</span>
+        `;
+        
+        dayButton.onclick = () => selectDay(i);
+        daysNav.appendChild(dayButton);
+      }
+    }
+    
+    function selectDay(day) {
+      // Simple day selection (would be more complex in real app)
+      document.querySelectorAll('.day-button').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.day-button').classList.add('active');
+      
+      // Update content based on day (simplified)
+      document.getElementById('day-title').textContent = `Dia ${day}: ${getDayTitle(day)}`;
+      document.getElementById('day-objective').textContent = getDayObjective(day);
+    }
+    
+    function getDayTitle(day) {
+      const titles = {
+        1: "Primeiro Passo", 2: "Criando Momentum", 3: "Estabelecendo Ritmo",
+        4: "Construindo Resistência", 5: "Intensificando o Foco"
+      };
+      return titles[day] || "Evoluindo Diariamente";
+    }
+    
+    function getDayObjective(day) {
+      const objectives = {
+        1: "Dar o primeiro passo na sua jornada de transformação.",
+        2: "Criar momentum com exercícios básicos e estabelecer rotina.",
+        3: "Estabelecer um ritmo consistente de exercícios e mindfulness.",
+        4: "Aumentar gradualmente sua resistência cardiovascular com exercícios de baixo impacto.",
+        5: "Intensificar o foco mental através de técnicas de concentração."
+      };
+      return objectives[day] || "Continuar evoluindo com disciplina e consistência.";
+    }
+    
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked');
+      const progress = (checked.length / checkboxes.length) * 100;
+      
+      // Update visual feedback
+      checked.forEach(checkbox => {
+        checkbox.closest('.checklist-item').classList.add('completed');
+      });
+      
+      // Update points (simple calculation)
+      const basePoints = 120;
+      const newPoints = basePoints + (checked.length * 10);
+      document.getElementById('points-display').innerHTML = `🏆 ${newPoints} pontos conquistados`;
+    }
+    
+    function completeDay() {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked');
+      
+      if (checked.length === checkboxes.length) {
+        alert('🎉 Parabéns! Dia 4 concluído com sucesso! +50 pontos bônus conquistados!');
+        // Update progress to next day
+        const progressFill = document.getElementById('progress-fill');
+        progressFill.style.width = '17%';
+      } else {
+        alert('Complete todas as tarefas do checklist para finalizar o dia!');
+      }
+    }
+    
+    function playVideo() {
+      alert('🎥 Vídeo carregando... (Funcionalidade em desenvolvimento)');
+    }
+    
+    // Initialize page
+    generateDaysNav();
+  </script>
+</body>
+</html>

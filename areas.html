@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Áreas - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html" aria-current="page">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1>Áreas de Evolução</h1>
+      <p>Desenvolva diferentes aspectos da sua vida com métodos cientificamente comprovados.</p>
+      
+      <div class="grid">
+        <article class="card">
+          <h3>🏋️ Fitness e Condicionamento</h3>
+          <p>Exercícios adaptativos para todos os níveis, focados em resultados sustentáveis.</p>
+          <span class="badge">Gratuito</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>🥗 Nutrição Inteligente</h3>
+          <p>Planos alimentares personalizados baseados em seus objetivos e preferências.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>🧘 Mindfulness e Meditação</h3>
+          <p>Técnicas de meditação e atenção plena para reduzir stress e aumentar o foco.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>⚡ Produtividade e Foco</h3>
+          <p>Métodos para otimizar seu tempo e alcançar máxima eficiência no trabalho.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>💝 Relacionamentos Saudáveis</h3>
+          <p>Desenvolva habilidades de comunicação e construa relacionamentos mais profundos.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>💰 Gestão Financeira</h3>
+          <p>Organize suas finanças e construa um futuro financeiro sólido.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>🎨 Criatividade e Inovação</h3>
+          <p>Desperte seu potencial criativo e desenvolva pensamento inovador.</p>
+          <span class="badge">Premium</span>
+        </article>
+        
+        <article class="card locked">
+          <h3>🌟 Desenvolvimento Pessoal</h3>
+          <p>Autoconhecimento, definição de metas e construção de uma mentalidade de crescimento.</p>
+          <span class="badge">Premium</span>
+        </article>
+      </div>
+      
+      <div class="card">
+        <h3>Desbloqueie todas as áreas</h3>
+        <p>Com o Premium, você tem acesso completo a todas as 8 áreas de evolução, com conteúdo personalizado e suporte da comunidade.</p>
+        <p><a class="btn" href="premium.html">Conhecer Premium</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

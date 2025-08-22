@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Comunidade - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html" aria-current="page">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1>Comunidade NeuroFit</h1>
+      <p>Conecte-se com pessoas que compartilham os mesmos objetivos de transformação.</p>
+      
+      <div class="warn">
+        <p><strong>Funcionalidade Premium:</strong> A comunidade está disponível apenas para assinantes Premium.</p>
+        <p><a href="premium.html">Conheça o Premium</a> para participar das discussões e grupos de apoio.</p>
+      </div>
+      
+      <div class="grid">
+        <article class="card">
+          <h3>💬 Fóruns de Discussão</h3>
+          <p>Participe de conversas sobre cada área de evolução, tire dúvidas e compartilhe experiências.</p>
+        </article>
+        
+        <article class="card">
+          <h3>👥 Grupos de Apoio</h3>
+          <p>Junte-se a grupos com objetivos similares aos seus e mantenha-se motivado.</p>
+        </article>
+        
+        <article class="card">
+          <h3>🏆 Desafios Semanais</h3>
+          <p>Participe de desafios comunitários e celebre suas conquistas com outros membros.</p>
+        </article>
+        
+        <article class="card">
+          <h3>📚 Biblioteca Compartilhada</h3>
+          <p>Acesse materiais extras compartilhados pela comunidade e especialistas.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

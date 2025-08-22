@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>NeuroFit - Corpo, Mente e Vida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html" id="auth-link">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main" tabindex="-1">
+    <section class="hero" aria-labelledby="slogan">
+      <div class="container">
+        <img src="images/logo.png" alt="NeuroFit" class="hero-logo">
+        <h1 id="slogan">Sua mente no comando, seu corpo sob seu controle.</h1>
+        <p class="hero-subtitle">Transforme corpo, mente e vida em apenas 30 dias.</p>
+        <p class="hero-cta">
+          <a class="btn btn-primary" href="quiz.html">Comece agora – é gratuito</a>
+        </p>
+      </div>
+    </section>
+    
+    <section class="home-summary">
+      <div class="container">
+        <div class="grid">
+          <article class="card">
+            <h3>O que é o NeuroFit</h3>
+            <p>Programa prático para evoluir corpo, mente e hábitos, com rotinas simples.</p>
+          </article>
+          
+          <article class="card">
+            <h3>O que o gratuito entrega</h3>
+            <p>1 área de evolução, rotina guiada de 30 dias, vídeos e checklist.</p>
+          </article>
+          
+          <article class="card">
+            <h3>O que o Premium desbloqueia</h3>
+            <p>Todas as 8 áreas, personalização, comunidade e conteúdos avançados.</p>
+            <p><a href="como-funciona.html" class="link-saiba-mais">Saiba mais</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple script to update year
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

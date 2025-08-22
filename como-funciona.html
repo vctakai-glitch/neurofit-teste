@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Como Funciona - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html" aria-current="page">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1 style="text-align: center; margin-bottom: 2.5rem;">Como Funciona o NeuroFit</h1>
+      
+      <div class="grid">
+        <article class="card card-step">
+          <div class="step-icon">📝</div>
+          <h3>1. Avalie seu perfil</h3>
+          <p>Responda ao quiz para identificar suas principais necessidades de evolução.</p>
+        </article>
+        
+        <article class="card card-step">
+          <div class="step-icon">📅</div>
+          <h3>2. Siga sua rotina personalizada</h3>
+          <p>Receba um plano de 30 dias adaptado ao seu estilo de vida.</p>
+        </article>
+        
+        <article class="card card-step">
+          <div class="step-icon">📈</div>
+          <h3>3. Evolua gradualmente</h3>
+          <p>Acompanhe seu progresso e desenvolva novos hábitos sustentáveis.</p>
+        </article>
+      </div>
+      
+      <div class="notice">
+        <h3>Versão Gratuita</h3>
+        <p>Acesse 1 área de evolução com rotina completa de 30 dias, vídeos explicativos e checklist diário.</p>
+      </div>
+      
+      <div class="card card-premium">
+        <div class="premium-icon">💎</div>
+        <h3>Versão Premium</h3>
+        <p>Desbloqueie todas as 8 áreas de evolução:</p>
+        <ul>
+          <li>Fitness e Condicionamento</li>
+          <li>Nutrição Inteligente</li>
+          <li>Mindfulness e Meditação</li>
+          <li>Produtividade e Foco</li>
+          <li>Relacionamentos Saudáveis</li>
+          <li>Gestão Financeira</li>
+          <li>Criatividade e Inovação</li>
+          <li>Desenvolvimento Pessoal</li>
+        </ul>
+        <p><a class="btn" href="premium.html">Conhecer Premium</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

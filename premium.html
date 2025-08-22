@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Premium - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html" aria-current="page">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1>NeuroFit Premium</h1>
+      <p>Acelere sua transformação com acesso completo a todas as funcionalidades.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <h3>✨ Plano Mensal</h3>
+          <p><strong>R$ 29,90/mês</strong></p>
+          <ul>
+            <li>Acesso a todas as 8 áreas</li>
+            <li>Planos personalizados</li>
+            <li>Comunidade exclusiva</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <button class="btn" onclick="alert('Funcionalidade em desenvolvimento')">Assinar Mensal</button>
+        </div>
+        
+        <div class="card">
+          <h3>🎯 Plano Anual</h3>
+          <p><strong>R$ 19,90/mês</strong> <small>(R$ 238,80 anual)</small></p>
+          <p><em>Economize 33%!</em></p>
+          <ul>
+            <li>Todos os benefícios do mensal</li>
+            <li>Acesso antecipado a novidades</li>
+            <li>Consultoria personalizada</li>
+            <li>Material bônus exclusivo</li>
+          </ul>
+          <button class="btn" onclick="alert('Funcionalidade em desenvolvimento')">Assinar Anual</button>
+        </div>
+      </div>
+      
+      <div class="notice">
+        <h3>Garantia de 7 dias</h3>
+        <p>Experimente sem riscos. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

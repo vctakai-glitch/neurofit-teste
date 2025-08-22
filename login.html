@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Login - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html" aria-current="page">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1>Entrar / Criar Conta</h1>
+      
+      <div class="grid">
+        <div class="card">
+          <h3>Já tem uma conta?</h3>
+          <form onsubmit="submitLogin(event)">
+            <label>
+              Email:
+              <input type="email" required>
+            </label>
+            
+            <label>
+              Senha:
+              <input type="password" required>
+            </label>
+            
+            <button type="submit" class="btn">Entrar</button>
+          </form>
+          
+          <p><a href="#" onclick="alert('Funcionalidade em desenvolvimento')">Esqueci minha senha</a></p>
+        </div>
+        
+        <div class="card">
+          <h3>Criar Nova Conta</h3>
+          <form onsubmit="submitRegister(event)">
+            <label>
+              Nome:
+              <input type="text" required>
+            </label>
+            
+            <label>
+              Email:
+              <input type="email" required>
+            </label>
+            
+            <label>
+              Senha:
+              <input type="password" required>
+            </label>
+            
+            <label>
+              Confirmar Senha:
+              <input type="password" required>
+            </label>
+            
+            <button type="submit" class="btn">Criar Conta</button>
+          </form>
+          
+          <p><small>Ao criar uma conta, você concorda com nossos <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.</small></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    
+    function submitLogin(event) {
+      event.preventDefault();
+      alert('Login realizado com sucesso!');
+    }
+    
+    function submitRegister(event) {
+      event.preventDefault();
+      alert('Conta criada com sucesso!');
+    }
+  </script>
+</body>
+</html>

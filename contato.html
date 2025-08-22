@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Contato - NeuroFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="topo" class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NeuroFit - Início">
+        <img src="images/logo.png" alt="NeuroFit">
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="areas.html">Áreas</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="contato.html" aria-current="page">Contato</a></li>
+          <li><a href="login.html">Entrar / Criar Conta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main" role="main">
+    <section class="container">
+      <h1>Contato</h1>
+      <p>Entre em contato conosco. Estamos aqui para ajudar na sua jornada de transformação.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <h3>📧 Email</h3>
+          <p>Para dúvidas gerais ou suporte:</p>
+          <p><a href="mailto:contato@neurofit.com.br">contato@neurofit.com.br</a></p>
+          
+          <p>Para questões técnicas:</p>
+          <p><a href="mailto:suporte@neurofit.com.br">suporte@neurofit.com.br</a></p>
+        </div>
+        
+        <div class="card">
+          <h3>💬 Chat Online</h3>
+          <p>Suporte em tempo real para assinantes Premium.</p>
+          <p><em>Segunda a sexta: 9h às 18h</em></p>
+          <button class="btn secondary" onclick="alert('Chat disponível apenas para Premium')">Iniciar Chat</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>📝 Formulário de Contato</h3>
+        <form onsubmit="submitContact(event)">
+          <label>
+            Nome:
+            <input type="text" required>
+          </label>
+          
+          <label>
+            Email:
+            <input type="email" required>
+          </label>
+          
+          <label>
+            Assunto:
+            <select required>
+              <option value="">Selecione um assunto</option>
+              <option value="suporte">Suporte Técnico</option>
+              <option value="premium">Questões sobre Premium</option>
+              <option value="sugestao">Sugestões</option>
+              <option value="outro">Outro</option>
+            </select>
+          </label>
+          
+          <label>
+            Mensagem:
+            <textarea rows="5" required></textarea>
+          </label>
+          
+          <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano-atual">2025</span> NeuroFit - "Sua mente no comando, seu corpo sob seu controle."</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    
+    function submitContact(event) {
+      event.preventDefault();
+      alert('Mensagem enviada! Retornaremos em até 24h.');
+    }
+  </script>
+</body>
+</html>
