@@ -33,44 +33,44 @@
   </header>
 
   <main id="conteudo" class="site-main" role="main">
-    <section class="container">
-      <h1>Contato</h1>
-      <p>Entre em contato conosco. Estamos aqui para ajudar na sua jornada de transformação.</p>
+    <section class="container" style="text-align: center; padding: 2rem 1rem;">
+      <h1 style="margin: 1.5rem 0 1rem 0;">Contato</h1>
+      <p style="margin-bottom: 3rem;">Entre em contato conosco. Estamos aqui para ajudar na sua jornada de transformação.</p>
       
-      <div class="grid">
-        <div class="card">
-          <h3>📧 Email</h3>
-          <p>Para dúvidas gerais ou suporte:</p>
-          <p><a href="mailto:contato@neurofit.com.br">contato@neurofit.com.br</a></p>
+      <div class="grid" style="justify-items: center; gap: 2rem; margin-bottom: 3rem;">
+        <div class="card" style="text-align: center; max-width: 400px; padding: 2rem 1.5rem;">
+          <h3 style="margin-bottom: 1.5rem;">📧 Email</h3>
+          <p style="margin-bottom: 1rem;">Para dúvidas gerais ou suporte:</p>
+          <p style="margin-bottom: 2rem;"><a href="mailto:contato@neurofit.com.br">contato@neurofit.com.br</a></p>
           
-          <p>Para questões técnicas:</p>
+          <p style="margin-bottom: 1rem;">Para questões técnicas:</p>
           <p><a href="mailto:suporte@neurofit.com.br">suporte@neurofit.com.br</a></p>
         </div>
         
-        <div class="card">
-          <h3>💬 Chat Online</h3>
-          <p>Suporte em tempo real para assinantes Premium.</p>
-          <p><em>Segunda a sexta: 9h às 18h</em></p>
+        <div class="card" style="text-align: center; max-width: 400px; padding: 2rem 1.5rem;">
+          <h3 style="margin-bottom: 1.5rem;">💬 Chat Online</h3>
+          <p style="margin-bottom: 1rem;">Suporte em tempo real para assinantes Premium.</p>
+          <p style="margin-bottom: 2rem;"><em>Segunda a sexta: 9h às 18h</em></p>
           <button class="btn secondary" onclick="alert('Chat disponível apenas para Premium')">Iniciar Chat</button>
         </div>
       </div>
       
-      <div class="card">
-        <h3>📝 Formulário de Contato</h3>
+      <div class="card" style="max-width: 600px; margin: 0 auto 2rem auto; text-align: left; padding: 2.5rem 2rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem;">📝 Formulário de Contato</h3>
         <form onsubmit="submitContact(event)">
-          <label>
+          <label style="display: block; margin-bottom: 1.5rem;">
             Nome:
-            <input type="text" required>
+            <input type="text" required style="margin-top: 0.5rem;">
           </label>
           
-          <label>
+          <label style="display: block; margin-bottom: 1.5rem;">
             Email:
-            <input type="email" required>
+            <input type="email" required style="margin-top: 0.5rem;">
           </label>
           
-          <label>
+          <label style="display: block; margin-bottom: 1.5rem;">
             Assunto:
-            <select required>
+            <select required style="margin-top: 0.5rem;">
               <option value="">Selecione um assunto</option>
               <option value="suporte">Suporte Técnico</option>
               <option value="premium">Questões sobre Premium</option>
@@ -79,12 +79,14 @@
             </select>
           </label>
           
-          <label>
+          <label style="display: block; margin-bottom: 2rem;">
             Mensagem:
-            <textarea rows="5" required></textarea>
+            <textarea rows="5" required style="margin-top: 0.5rem;"></textarea>
           </label>
           
-          <button type="submit" class="btn">Enviar Mensagem</button>
+          <div style="text-align: center;">
+            <button type="submit" class="btn">Enviar Mensagem</button>
+          </div>
         </form>
       </div>
     </section>
